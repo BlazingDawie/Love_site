@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>IMG-20250819-WA0000.jpg
+  <meta charset="UTF-8">
+  <title>For My Love 💕</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: pink;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      width: 200px;   /* adjust this to make it smaller or bigger */
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 15px; /* optional: gives it rounded corners */
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #d63384;
+    }
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #yesBtn {
+      background-color: #ff69b4;
+      color: white;
+    }
+    #yesBtn:hover {
+      background-color: #ff85c1;
+    }
+    #noBtn {
+      background-color: #ccc;
+      color: black;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <img id="mainimage" src="IMG-20250819-WA0000.jpg" alt="Cute Picture">
+  <h1 id="mainText">Do you know how much I love you? 💖</h1>
+  <div class="buttons">
+    <button id="noBtn">Yes</button>
+    <button id="yesBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      document.getElementById('mainimage').src = "IMG-20250728-WA0044.jpeg"
+      document.getElementById('mainText').innerHTML = "Enough to make me smile like this. 💕😘";
+    });
+  </script>
+</body>
+</html>
